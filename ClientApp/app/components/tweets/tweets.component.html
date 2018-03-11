@@ -1,0 +1,77 @@
+<!--<p>-->
+    <!--{{ socialMediAnalysisis | json }}-->
+<!--</p>-->
+<div class="post" *ngFor="let coinDetail of socialMediaAnalysisis">
+    <div>
+        <div class="twitter-post">
+            <div class="details-row">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th scope="row" style="width: 50px">
+                            <span title="Rank"><b>#</b></span> {{coinDetail.coinMarketCap.rank}}
+                        </th>
+                        <th class="no-wrap currency-name" data-sort="Ethereum">
+                            <img src="https://www.cryptocompare.com/{{coinDetail.coin.imageUrl}}" class="currency-logo-sprite" alt="{{coinDetail.coin.coinName}}" width="20px">
+                            <span class="currency-symbol"><a href="/currencies/ethereum/">{{coinDetail.coinMarketCap.symbol}}</a></span>
+                            <a class="currency-name-container" href="/currencies/ethereum/">{{coinDetail.coinMarketCap.name}}</a>
+                        </th>
+                    </tr>
+                    <tr id="id-ethereum" bgcolor="#b8daff">
+                        <td></td>
+                        
+                        <td class="no-wrap text-left" data-usd="86823786378.1" data-btc="8106034.84018">
+                            <span title="Market Cap"><b>Market Cap: </b></span>{{coinDetail.coinMarketCap.market_cap_usd}}$</td>
+                        <td class="no-wrap text-right">
+                            <a href="/currencies/ethereum/#markets" class="price">
+                                <span title="Price"><b>Price: </b></span>{{coinDetail.coinMarketCap.price_usd}}$
+                            </a>
+                        </td>
+                        <td class="no-wrap text-right">
+                            <a href="/currencies/ethereum/#markets" class="volume" data-usd="2187790000.0" data-btc="204256.0">
+                                <span title="Volume 24H"><b>Volume: </b></span> {{coinDetail.coinMarketCap.daily_volume}}$
+                            </a>
+                        </td>
+                        <td class="no-wrap percent-change   text-right positive_change" data-timespan="24h" data-percentusd="2.57154" data-symbol="ETH">
+                            <span title="Price Change(24H)"><b>Price C: </b></span> {{coinDetail.coinMarketCap.percent_change_24h}}%
+                        </td>
+                        <td class="text-center sorting_1">
+                            <span title="Twitter Change"><b>Twitter Change: </b></span> {{coinDetail.solumeDetail.twitter_Change_24h}}
+                        </td>
+                        <td class="text-center sorting_1">
+                            <span title="Twitter Change"><b>Twitter Volume: </b></span> {{coinDetail.solumeDetail.twitter_Volume_24h}}
+                        </td>
+                        <td class="text-center sorting_1">
+                            <span title="Twitter Change"><b>Reddit Change: </b></span> {{coinDetail.solumeDetail.reddit_Change_24h}}
+                        </td>
+                        <td class="text-center sorting_1">
+                            <span title="Twitter Change"><b>Reddit Volume: </b></span> {{coinDetail.solumeDetail.reddit_Volume_24h}}
+                        </td>
+                    </tr>
+                    </tbody>                    
+                </table>
+            </div>
+            <div>
+                <h4 class="post-text dont-break-out">
+                    <span class="dont-break-out" title="{{coinDetail.coinTweet.text}}">{{coinDetail.coinTweet.text}}</span>
+                    <a href="{{coinDetail.coinTweet.tweetURL}}" target="_blank" rel="noopener noreferrer">
+                        <span class="glyphicon glyphicon-new-window new-window-icon"></span>
+                    </a>
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="time-author-row">submitted
+                        <span class="post-date" title="{{coinDetail.coinTweet.createdAt}}">2 days ago </span>by
+                        <span class="post-author-name">{{coinDetail.coinTweet.name}}</span>
+                        <span class="post-author-screen-name">@{{coinDetail.coinTweet.screenName}}</span>
+                    </div>
+                    <div class="details-row">
+                        <img src="/images/twitter.png" class="post-source-img">{{coinDetail.coinTweet.favoriteCount}} likes, {{coinDetail.coinTweet.retweetCount}} retweets
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
